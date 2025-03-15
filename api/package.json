@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "react-scripts test",
     "test": "jest"
   },
   "keywords": [],
@@ -13,7 +14,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.12.1"
+    "mongoose": "^8.12.1",
+    "react-router-dom": "^6.x.x"
   },
   "devDependencies": {
     "jest": "^29.7.0",
