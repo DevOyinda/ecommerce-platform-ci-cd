@@ -13,6 +13,12 @@
     "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
+    "jest": {
+      "moduleNameMapper": {
+    	"^react-router-dom$": "<rootDir>/node_modules/react-router-dom"
+  }
+}
+
   },
   "scripts": {
     "start": "react-scripts start",
