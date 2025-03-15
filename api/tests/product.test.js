@@ -10,4 +10,7 @@ describe('GET /api/products', () => {
 });
 
 // Add tests for other endpoints
-
+// Gracefully close the server after tests
+afterAll(() => {
+  server.close(); // Close the server after tests are completed
+});
