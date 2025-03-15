@@ -34,10 +34,12 @@ jobs:
       - name: Install dependencies
         run: |
           cd webapp
-          npm install
+          npm ci
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd webapp
+          npm test
 
       - name: Build application
         run: |
