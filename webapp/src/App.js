@@ -1,16 +1,43 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/pages/Home';
+import Contact from './components/pages/Contact';
+import About from './components/pages/About';
+
+import Support from './components/pages/Support';
+import NoPage from './components/pages/NoPage';
+import Layout from './components/pages/Layout';
+import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Route without components you don't need */}
-        <Route path="/" element={<div>Welcome to the E-commerce App</div>} />
-      </Routes>
-    </Router>
+    /*<div className="App">
+      <Home/>
+      <About/>
+      <Contact/>HomeAboutContactSupport
+      <Support/>
+    </div>*/
+
+    <BrowserRouter>
+    
+    <Routes>
+
+      <Route path='/' element={<Layout/>}>
+
+        <Route index     element={<Home/>} />
+
+        <Route path='Contact'  element={<Contact/>}  />
+
+        <Route path='About'  element={<About/>}  />
+
+        <Route path ='Support'  elemnent={<Support/>} />
+
+        <Route path='*' element ={<NoPage/>}  />
+
+      </Route>
+
+    </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
-

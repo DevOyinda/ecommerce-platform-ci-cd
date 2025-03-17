@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/jest/bin/jest.js"
+    "start": "node index.js",
+    "test": "node node_modules/jest/bin/jest.js",
+    "build" : "echo 'No build step needed'"
   },
   "keywords": [],
   "author": "",
