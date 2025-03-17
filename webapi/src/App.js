@@ -5,12 +5,11 @@ function App() {
     <Router>
       <Routes>
         {/* Route without components you don't need */}
-        <Route path="/" element={<div>Welcome to the E-commerce App</div>} />
+        <Route path="/" element={<div>Frontend is working</div>} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
 
