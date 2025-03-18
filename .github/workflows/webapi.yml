@@ -38,12 +38,12 @@ jobs:
 
       - name: Run tests
         run: |
-          cd webapp
+          cd webapi
           npm test
 
       - name: Build application
         run: |
-          cd webapp
+          cd webapi
           npm run build
 
 

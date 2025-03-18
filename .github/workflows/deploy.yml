@@ -26,27 +26,12 @@ jobs:
           cd api
           npm install
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: |
-          cd webapp
-          npm install
-
-
       # Step 4: Run tests
       - name: Run tests
         run: |
           cd api
           chmod +x ./node_modules/.bin/jest
           npm test
-
-      # Step 4: Run tests
-      - name: Run tests
-        run: |
-          cd webapp
-          chmod +x ./node_modules/.bin/jest
-          npm test
-
 
       # Step 5: Set up Docker Buildx
       - name: Set up Docker Buildx
@@ -96,6 +81,13 @@ jobs:
         run: |
           docker build --no-cache -t ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-backend:${{ github.sha }} -f api/Dockerfile ./api
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-backend:${{ github.sha }}
+
+           # Step 7: Build and push frontend Docker image
+      - name: Build and push frontend Docker image
+        run: |
+          docker build --no-cache -t ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-frontend1:${{ github.sha }} -f webapi/Dockerfile ./webapi
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-frontend1:${{ github.sha }}
+
 
       # Step 9: Deploy to AWS & Install Docker on EC2 if not installed
       - name: Install Docker on EC2 if not installed
