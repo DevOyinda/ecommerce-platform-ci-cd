@@ -22,8 +22,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      
-      - name: Cache npm dependencies
+
+      - name: Cache node modules
         uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -31,19 +31,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-
       - name: Install dependencies
         run: |
-          cd api
+          cd webapp
           npm install
 
-      - name: Run Jest Tests
+      - name: Run tests
         run: |
-          cd api
+          cd webapp
           npm test
-
 
       - name: Build application
         run: |
-          cd api
+          cd webapp
           npm run build
+
+
