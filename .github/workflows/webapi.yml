@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Webapi-CI Pipeline
 
 on:
   push:
